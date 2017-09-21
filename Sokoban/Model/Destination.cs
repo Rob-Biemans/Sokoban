@@ -7,5 +7,11 @@ namespace Sokoban
 {
     public class Destination : Field
     {
+
+        // Constructor
+        public Destination()
+        {
+            this.type = "Destination";
+        }
     }
 }

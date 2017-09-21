@@ -7,6 +7,15 @@ namespace Sokoban
 {
     public class Player
     {
+        
+
+        // Constructor
+        public Player()
+        {
+            
+        }
+
+
         public void move()
         {
             throw new System.NotImplementedException();

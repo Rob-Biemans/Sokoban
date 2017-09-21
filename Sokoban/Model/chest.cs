@@ -7,5 +7,11 @@ namespace Sokoban
 {
     public class Chest : Field
     {
+
+        // Constructor
+        public Chest()
+        {
+            this.type = "Chest";
+        }
     }
 }

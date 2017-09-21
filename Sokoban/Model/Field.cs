@@ -7,9 +7,20 @@ namespace Sokoban
 {
     public class Field
     {
-        private string type;
-        private int X;
-        private int Y;
-        private bool moveAble;
+        // Declarations
+        public string type;
+        public int X { get; set; }
+        public int Y { get; set; }
+        public bool moveAble;
+
+        public Player Player { get; set; }
+
+        // Constructor
+        public Field()
+        {
+
+        }
+
+        
     }
 }
