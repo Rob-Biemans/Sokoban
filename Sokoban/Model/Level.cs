@@ -7,9 +7,12 @@ namespace Sokoban
 {
     public class Level
     {
+        // Declarations
+        public Field Field { get; set; }
+
         private Field _fieldArray;
         private int _size;
-        public Field Field { get; set; }
+
 
         // Constructor
         public Level()
@@ -17,9 +20,5 @@ namespace Sokoban
             
         }
 
-        public void generateLevel(int value)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

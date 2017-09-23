@@ -5,3 +5,8 @@ C:\Users\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\b
 C:\Users\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\obj\Debug\Sokoban.csprojResolveAssemblyReference.cache
 C:\Users\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\obj\Debug\Sokoban.exe
 C:\Users\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\obj\Debug\Sokoban.pdb
+E:\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\obj\Debug\Sokoban.exe
+E:\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\obj\Debug\Sokoban.pdb
+E:\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\bin\Debug\Sokoban.exe
+E:\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\bin\Debug\Sokoban.pdb
+E:\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\obj\Debug\Sokoban.csprojResolveAssemblyReference.cache

@@ -5,20 +5,18 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Player
+    public class Player : Field
     {
-        
+        // Declarations
 
         // Constructor
         public Player()
         {
-            
+            this.type = "Player";
+            this.moveAble = true;
+            this.icon = "@";
         }
 
-
-        public void move()
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

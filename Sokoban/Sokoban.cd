@@ -1,49 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Sokoban.Game">
-    <Position X="6.5" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAEAAAAAAAgAAAAAAAACAgAEACAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>gAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="_player" />
-      <Property Name="Level" />
+      <Property Name="GameController" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Player">
-    <Position X="9" Y="3" Width="1.5" />
+    <Position X="6.75" Y="7" Width="1.5" />
+    <InheritanceLine Type="Sokoban.Field" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="4.75" Y="8.601" />
+        <Point X="5.125" Y="8.601" />
+        <Point X="5.125" Y="7.616" />
+        <Point X="6.75" Y="7.616" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Field">
-    <Position X="3.25" Y="3.5" Width="1.5" />
+    <Position X="3.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAABAAAAAAAAAQAAYAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAABAAAAAQAAAAAAYAA=</HashCode>
       <FileName>Model\Field.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Player" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Floor">
-    <Position X="0.5" Y="6.75" Width="1.5" />
+    <Position X="0.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Wall">
-    <Position X="2.25" Y="6.75" Width="1.5" />
+    <Position X="2.25" Y="10.5" Width="1.5" />
     <InheritanceLine Type="Sokoban.Field" ManuallyRouted="true" FixedToPoint="true">
       <Path>
-        <Point X="4" Y="5.891" />
-        <Point X="4" Y="6.255" />
-        <Point X="3.133" Y="6.255" />
-        <Point X="3.133" Y="6.75" />
-        <Point X="3.125" Y="6.75" />
+        <Point X="4" Y="9.833" />
+        <Point X="4" Y="10.115" />
+        <Point X="3.125" Y="10.115" />
+        <Point X="3.125" Y="10.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -52,7 +55,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Chest">
-    <Position X="5.75" Y="6.75" Width="1.5" />
+    <Position X="5.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Chest.cs</FileName>
@@ -60,9 +63,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Level">
-    <Position X="3.5" Y="1" Width="1.5" />
+    <Position X="4" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAgAA=</HashCode>
       <FileName>Model\Level.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -70,10 +73,36 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Destination">
-    <Position X="4" Y="6.75" Width="1.5" />
+    <Position X="4" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Destination.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.GameController">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAIEAAAAAAAAACQAAAECAAAAAABAAAAAAAAQ=</HashCode>
+      <FileName>Controller\GameController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="_level" />
+      <Property Name="_player" />
+      <Property Name="_gameView" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.GameView">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\GameView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.DestinationFilled">
+    <Position X="9" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\DestinationFilled.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

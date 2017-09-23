@@ -5,14 +5,13 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Floor : Field
+    public class DestinationFilled : Field
     {
-        // Constructor
-        public Floor()
+        public DestinationFilled()
         {
-            this.type = "Floor";
+            this.type = "DestinationFilledWithChest";
             this.moveAble = false;
-            this.icon = ".";
+            this.icon = "0";
         }
     }
 }

@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\GameController.cs" />
+    <Compile Include="Model\DestinationFilled.cs" />
+    <Compile Include="View\GameView.cs" />
     <Compile Include="Model\Destination.cs" />
     <Compile Include="Model\Level.cs" />
     <Compile Include="Model\Chest.cs" />
@@ -58,10 +61,7 @@
     <None Include="App.config" />
     <None Include="Sokoban.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Levels\doolhof1.txt" />
     <Content Include="Levels\doolhof2.txt" />

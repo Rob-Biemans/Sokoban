@@ -12,6 +12,8 @@ namespace Sokoban
         public Chest()
         {
             this.type = "Chest";
+            this.moveAble = true;
+            this.icon = "O";
         }
     }
 }

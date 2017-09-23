@@ -9,11 +9,10 @@ namespace Sokoban
     {
         // Declarations
         public string type;
+        public string icon;
+        public bool moveAble;
         public int X { get; set; }
         public int Y { get; set; }
-        public bool moveAble;
-
-        public Player Player { get; set; }
 
         // Constructor
         public Field()

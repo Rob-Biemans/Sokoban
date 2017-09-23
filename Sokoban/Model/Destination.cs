@@ -12,6 +12,8 @@ namespace Sokoban
         public Destination()
         {
             this.type = "Destination";
+            this.moveAble = false;
+            this.icon = "x";
         }
     }
 }

@@ -11,6 +11,8 @@ namespace Sokoban
         public Wall()
         {
             this.type = "Wall";
+            this.moveAble = false;
+            this.icon = "█";
         }
     }
 }
