@@ -12,7 +12,7 @@ namespace Sokoban
         {
             this.type = "Wall";
             this.moveAble = false;
-            this.icon = "█";
+            this.icon = "#";
         }
     }
 }

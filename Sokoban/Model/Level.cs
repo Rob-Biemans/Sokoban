@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -8,16 +9,112 @@ namespace Sokoban
     public class Level
     {
         // Declarations
-        public Field Field { get; set; }
+        public Wall Wall { get; set; }
+        public Floor Floor { get; set; }
+        public Destination Destination { get; set; }
+        public DestinationFilled DestinationFilled { get; set; }
+        public Chest Chest { get; set; }
 
-        private Field _fieldArray;
-        private int _size;
+        private GameController GameController { get; set; }
+
+        private Field[,] _fieldArray { get; set; }
+        private int _height { get; set; }
+        private int _width { get; set; }
+        private string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
 
 
         // Constructor
-        public Level()
+        public Level(GameController gamecontroller)
         {
-            
+            _filePath = Directory.GetParent(Directory.GetParent(_filePath).FullName).FullName;
+        }
+
+        public int getHeightOfLevel(string[] lines)
+        {
+            int count = 0;
+
+            foreach (string line in lines) {
+                count++;
+            }
+
+            return count;
+        }
+
+        public int getWidthofLevel(string[] lines)
+        {
+            int count = 0;
+
+            foreach (string line in lines)
+            {
+
+                foreach (char Char in line)
+                {
+                    count++;
+                }
+                break;
+            }
+
+            return count;
+        }
+
+        public void setField(int value)
+        {
+            _filePath += @"\Levels\doolhof" + value +".txt";
+            string[] lines = System.IO.File.ReadAllLines(_filePath);
+
+            this._height = getHeightOfLevel(lines);
+            this._width = getWidthofLevel(lines);
+
+            this._fieldArray = new Field[_height, _width];
+
+            int y = 0; // row
+            int x = 0; // colomn
+            foreach (string line in lines)
+            {
+                foreach(char Char in line)
+                {
+                    switch (Char)
+                    {
+                        case '#':
+                            _fieldArray[y,x] = new Wall();
+                        break;
+
+                        case '.':
+                            _fieldArray[y, x] = new Floor();
+                        break;
+
+                        case 'o':
+                            _fieldArray[y, x] = new Chest();
+                        break;
+
+                        case 'x':
+                            _fieldArray[y, x] = new Destination();
+                        break;
+
+                        case '@':
+                            _fieldArray[y, x] = new Player();
+                        break;
+                    }
+                    x++;
+                }
+                y++;
+                x = 0;
+            }
+        }
+
+        public Field[,] getField()
+        {
+            return _fieldArray;
+        }
+
+        public int getHeight()
+        {
+            return _height;
+        }
+
+        public int getWidth()
+        {
+            return _width;
         }
 
     }

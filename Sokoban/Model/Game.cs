@@ -10,7 +10,7 @@ namespace Sokoban
     {
         // Declarations
         private bool _finished; 
-        private GameController GameController { get; set; }
+        private GameController _GameController { get; set; }
 
         // Constructor
         public Game()

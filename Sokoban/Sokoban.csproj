@@ -45,6 +45,11 @@
   <ItemGroup>
     <Compile Include="Controller\GameController.cs" />
     <Compile Include="Model\DestinationFilled.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\GameView.cs" />
     <Compile Include="Model\Destination.cs" />
     <Compile Include="Model\Level.cs" />
@@ -61,12 +66,25 @@
     <None Include="App.config" />
     <None Include="Sokoban.cd" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Levels\doolhof1.txt" />
-    <Content Include="Levels\doolhof2.txt" />
-    <Content Include="Levels\doolhof3.txt" />
-    <Content Include="Levels\doolhof4.txt" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Levels\doolhof1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\doolhof2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\doolhof3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Levels\doolhof4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

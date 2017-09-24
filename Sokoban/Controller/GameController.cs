@@ -8,9 +8,9 @@ namespace Sokoban
     public class GameController
     {
         //Declarations
-        private Game _game { get; set; }
-        private Level _level { get; set; }
-        private Player _player { get; set; }
+        private Game _gameModel { get; set; }
+        private Level _levelModel { get; set; }
+        private Player _playerModel { get; set; }
 
         private GameView _gameView { get; set; }
 
@@ -19,8 +19,9 @@ namespace Sokoban
         public GameController()
         {
             _gameView = new GameView();
-            _game = new Game();
-            _player = new Player();
+            _gameModel = new Game();
+            _playerModel = new Player();
+            _levelModel = new Level(this);
             initGame();
         }
 
@@ -57,23 +58,19 @@ namespace Sokoban
 
             if (note.Length > 1) {
                 selectLevel();
-            } else if (note == "S") {
+            } else if (note == "S" || note == "s") {
                 Console.WriteLine("Stopt!");
                 Console.ReadKey();
             }
 
             try {
                 int getal = Int16.Parse(note);
-                generateLevel(getal);
+                _levelModel.setField(getal);
+                _gameView.printLevel(_levelModel.getHeight(), _levelModel.getWidth(), _levelModel.getField());
             } catch (FormatException e) {
                 selectLevel();
             }
         }
 
-        public void generateLevel(int val)
-        {
-            Console.WriteLine("GETAL: " + val);
-            Console.ReadKey();
-        }
     }
 }

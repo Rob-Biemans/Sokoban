@@ -13,7 +13,7 @@ namespace Sokoban
         {
             this.type = "Chest";
             this.moveAble = true;
-            this.icon = "O";
+            this.icon = "o";
         }
     }
 }
