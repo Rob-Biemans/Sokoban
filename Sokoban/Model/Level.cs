@@ -24,7 +24,7 @@ namespace Sokoban
 
 
         // Constructor
-        public Level(GameController gamecontroller)
+        public Level()
         {
             _filePath = Directory.GetParent(Directory.GetParent(_filePath).FullName).FullName;
         }
@@ -60,6 +60,7 @@ namespace Sokoban
         public void setField(int value)
         {
             _filePath += @"\Levels\doolhof" + value +".txt";
+
             string[] lines = System.IO.File.ReadAllLines(_filePath);
 
             this._height = getHeightOfLevel(lines);

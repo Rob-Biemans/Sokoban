@@ -6,7 +6,7 @@ using System.Text;
 namespace Sokoban
 {
     public class GameView
-    {
+    { 
 
         public void printWelcome()
         {
@@ -37,7 +37,6 @@ namespace Sokoban
                 }
                 Console.WriteLine();
             }
-            Console.ReadKey();
         }
     }
 }

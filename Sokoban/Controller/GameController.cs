@@ -8,11 +8,12 @@ namespace Sokoban
     public class GameController
     {
         //Declarations
-        private Game _gameModel { get; set; }
         private Level _levelModel { get; set; }
         private Player _playerModel { get; set; }
 
         private GameView _gameView { get; set; }
+
+        private Game _gameModel { get; set; }
 
 
         // Constructor
@@ -21,7 +22,6 @@ namespace Sokoban
             _gameView = new GameView();
             _gameModel = new Game();
             _playerModel = new Player();
-            _levelModel = new Level(this);
             initGame();
         }
 
@@ -34,14 +34,37 @@ namespace Sokoban
 
         public void play()
         {
-            /*
-            while (_finished != true)
+            while (_gameModel.getFinished() != true)
             {
-
+                var ch = Console.ReadKey(false).Key;
+                switch (ch)
+                {
+                    case ConsoleKey.UpArrow:
+                        Console.WriteLine("pijl omhoog");
+                        break;
+                    case ConsoleKey.DownArrow:
+                        Console.WriteLine("pijl omlaag");
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        Console.WriteLine("pijl links");
+                        break;
+                    case ConsoleKey.RightArrow:
+                        Console.WriteLine("pijl rechts");
+                        break;
+                }
             }
 
-            // nieuwe level of bij dood/vast lopen playAgain()
-            */
+            _gameModel.getLevelModel().getField();
+
+            // 1 locatie speler
+            // 2 bekijken of het mogelijk is om te verplaatsen naar gewenste richting
+            //   ~ bij floor = speler verplaatsen op die plek.
+            //      ~ vorige positie speler wordt floor
+
+            // 3 verplaatsen van een chest
+            //   ~ check of kist kan bewegen (andere kant van kist moet floor zijn)
+            //      ~ vorige positie kist wordt speler
+            //      ~ vorige positie speler wordt floor
         }
 
         public void playAgain()
@@ -65,8 +88,9 @@ namespace Sokoban
 
             try {
                 int getal = Int16.Parse(note);
-                _levelModel.setField(getal);
-                _gameView.printLevel(_levelModel.getHeight(), _levelModel.getWidth(), _levelModel.getField());
+                _gameModel.createField(getal);
+                _gameView.printLevel(_gameModel.getLevelModel().getHeight(), _gameModel.getLevelModel().getWidth(), _gameModel.getLevelModel().getField());
+                play();
             } catch (FormatException e) {
                 selectLevel();
             }

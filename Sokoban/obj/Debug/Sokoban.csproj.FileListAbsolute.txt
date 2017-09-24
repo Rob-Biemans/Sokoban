@@ -16,3 +16,15 @@ E:\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\bin\Deb
 E:\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\bin\Debug\Levels\doolhof4.txt
 E:\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\obj\Debug\Sokoban.Properties.Resources.resources
 E:\Rob\Dropbox\Prive van rob\School\HBO\2e leerjaar\MOD3\Sokoban\Sokoban\obj\Debug\Sokoban.csproj.GenerateResource.Cache
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\bin\Debug\Sokoban.exe.config
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\obj\Debug\Sokoban.exe
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\obj\Debug\Sokoban.pdb
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\bin\Debug\Levels\doolhof1.txt
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\bin\Debug\Levels\doolhof2.txt
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\bin\Debug\Levels\doolhof3.txt
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\bin\Debug\Levels\doolhof4.txt
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\bin\Debug\Sokoban.exe
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\bin\Debug\Sokoban.pdb
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\obj\Debug\Sokoban.csprojResolveAssemblyReference.cache
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\obj\Debug\Sokoban.Properties.Resources.resources
+C:\Users\Thijs\Documents\GitHub\Sokoban\Sokoban\obj\Debug\Sokoban.csproj.GenerateResource.Cache
