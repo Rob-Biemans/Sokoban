@@ -20,6 +20,15 @@ namespace Sokoban
 
         }
 
+        public void moveTo()
+        {
+            
+        }
+
+        public void nextToMe()
+        {
+
+        }
         
     }
 }

@@ -44,13 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\GameController.cs" />
+    <Compile Include="View\inputView.cs" />
     <Compile Include="Model\DestinationFilled.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="View\GameView.cs" />
+    <Compile Include="View\outputView.cs" />
     <Compile Include="Model\Destination.cs" />
     <Compile Include="Model\Level.cs" />
     <Compile Include="Model\Chest.cs" />

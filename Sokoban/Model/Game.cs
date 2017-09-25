@@ -39,5 +39,10 @@ namespace Sokoban
         {
             return _levelModel;
         }
+
+        public void resetField(int getal)
+        {
+            _levelModel.setField(getal);
+        }
     }
 }
