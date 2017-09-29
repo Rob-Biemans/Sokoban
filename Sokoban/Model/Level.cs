@@ -8,12 +8,11 @@ namespace Sokoban
 {
     public class Level
     {
-        // Declarations
-        public Wall Wall { get; set; }
         public Floor Floor { get; set; }
         public Destination Destination { get; set; }
         public DestinationFilled DestinationFilled { get; set; }
         public Chest Chest { get; set; }
+        private Field _Field { get; set; }
 
         private GameController GameController { get; set; }
 
@@ -21,12 +20,13 @@ namespace Sokoban
         private int _height { get; set; }
         private int _width { get; set; }
         private string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
+        private Player _player { get; set; }
 
 
         // Constructor
-        public Level(GameController gamecontroller)
+        public Level()
         {
-            _filePath = Directory.GetParent(Directory.GetParent(_filePath).FullName).FullName;
+            
         }
 
         public int getHeightOfLevel(string[] lines)
@@ -59,7 +59,9 @@ namespace Sokoban
 
         public void setField(int value)
         {
+            _filePath = Directory.GetParent(Directory.GetParent(_filePath).FullName).FullName;
             _filePath += @"\Levels\doolhof" + value +".txt";
+
             string[] lines = System.IO.File.ReadAllLines(_filePath);
 
             this._height = getHeightOfLevel(lines);
@@ -69,6 +71,7 @@ namespace Sokoban
 
             int y = 0; // row
             int x = 0; // colomn
+
             foreach (string line in lines)
             {
                 foreach(char Char in line)
@@ -92,7 +95,8 @@ namespace Sokoban
                         break;
 
                         case '@':
-                            _fieldArray[y, x] = new Player();
+                            this._player = new Player(y, x);
+                            _fieldArray[y, x] = this._player;
                         break;
                     }
                     x++;
@@ -116,6 +120,12 @@ namespace Sokoban
         {
             return _width;
         }
+
+        public Player getPlayer()
+        {
+            return _player;
+        }
+
 
     }
 }

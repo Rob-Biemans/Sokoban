@@ -10,11 +10,14 @@ namespace Sokoban
         // Declarations
 
         // Constructor
-        public Player()
+        public Player(int y, int x)
         {
             this.type = "Player";
             this.moveAble = true;
             this.icon = "@";
+
+            this.Y = y;
+            this.X = x;
         }
 
         public override void moveTo()

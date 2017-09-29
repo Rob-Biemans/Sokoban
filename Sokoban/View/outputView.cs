@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class GameView
-    {
+    public class outputView
+    { 
 
         public void printWelcome()
         {
@@ -26,18 +26,23 @@ namespace Sokoban
 
         public void printLevel(int height, int width, Field[,] _fieldArray)
         {
-            Console.WriteLine("PRINT FIELD");
-
+            Console.Clear();
+            printBanner();
             for (int y = 0; y < height; y++)
             {
-                Console.Write("Rij: " + y + " ");
                 for (int x = 0; x < width; x++)
                 {
                     Console.Write(_fieldArray[y, x].icon);
                 }
                 Console.WriteLine();
             }
-            Console.ReadKey();
+        }
+
+        public void printBanner()
+        {
+            Console.WriteLine("╒═════════════════════════╕");
+            Console.WriteLine("| Sokoban                 |");
+            Console.WriteLine("╘═════════════════════════╛");
         }
     }
 }

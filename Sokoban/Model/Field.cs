@@ -20,8 +20,15 @@ namespace Sokoban
 
         }
 
-
         public abstract void moveTo();
-        
+
+        public bool checkNextOfMe()
+        {
+            // Bekijk welke object / instantie naast mij zit
+            // Als het een muur is dan return dat het niet mogelijk is
+            return false;
+        }
+
+
     }
 }
