@@ -13,5 +13,10 @@ namespace Sokoban
             this.moveAble = false;
             this.icon = "0";
         }
+
+        public override void moveTo()
+        {
+            return;
+        }
     }
 }

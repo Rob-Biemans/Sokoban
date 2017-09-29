@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Field
+    public abstract class Field
     {
         // Declarations
         public string type;
@@ -20,6 +20,8 @@ namespace Sokoban
 
         }
 
+
+        public abstract void moveTo();
         
     }
 }

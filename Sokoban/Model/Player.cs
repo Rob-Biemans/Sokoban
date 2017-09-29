@@ -17,6 +17,11 @@ namespace Sokoban
             this.icon = "@";
         }
 
+        public override void moveTo()
+        {
+
+        }
+
         
     }
 }
