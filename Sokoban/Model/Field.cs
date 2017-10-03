@@ -8,9 +8,9 @@ namespace Sokoban
     public abstract class Field
     {
         // Declarations
+        private Game _gameModel { get; set; }
         public string type;
         public string icon;
-        public bool moveAble;
         public int X { get; set; }
         public int Y { get; set; }
 
@@ -20,13 +20,29 @@ namespace Sokoban
 
         }
 
-        public abstract void moveTo();
+        public abstract Field[,] moveTo(Player player, string direction, Field[,] field);
 
-        public bool checkNextOfMe()
+        public Field checkNextOfMe(Player player, string direction, Field[,] fieldArray)
         {
-            // Bekijk welke object / instantie naast mij zit
-            // Als het een muur is dan return dat het niet mogelijk is
-            return false;
+
+            if (direction == "Up")
+            {
+                return fieldArray[player.Y - 1, player.X];
+            }
+            else if (direction == "Down")
+            {
+                return fieldArray[player.Y + 1, player.X];
+            }
+            else if (direction == "Right")
+            {
+                return fieldArray[player.Y, player.X + 1];
+            }
+            else if (direction == "Left")
+            {
+                return fieldArray[player.Y, player.X - 1];
+            }
+
+            throw new Exception();
         }
 
 

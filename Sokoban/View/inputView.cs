@@ -10,7 +10,7 @@ namespace Sokoban
         public void printQuestion()
         {
             Console.WriteLine("═════════════════════════");
-            Console.WriteLine("> Gebruiker de pijltoetsen ( s = stop / r = reset )");
+            Console.WriteLine("> Gebruik de pijltoetsen om te lopen ( s = stop / r = reset )");
         }
     }
 }

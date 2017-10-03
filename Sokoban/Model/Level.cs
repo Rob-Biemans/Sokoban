@@ -8,15 +8,12 @@ namespace Sokoban
 {
     public class Level
     {
-        public Floor Floor { get; set; }
-        public Destination Destination { get; set; }
-        public DestinationFilled DestinationFilled { get; set; }
-        public Chest Chest { get; set; }
-        private Field _Field { get; set; }
+        private Field _FieldModel { get; set; }
 
         private GameController GameController { get; set; }
 
         private Field[,] _fieldArray { get; set; }
+        private Field[,] _fieldArrayTop { get; set; }
         private int _height { get; set; }
         private int _width { get; set; }
         private string _filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
@@ -26,7 +23,7 @@ namespace Sokoban
         // Constructor
         public Level()
         {
-            
+
         }
 
         public int getHeightOfLevel(string[] lines)
@@ -94,6 +91,10 @@ namespace Sokoban
                             _fieldArray[y, x] = new Destination();
                         break;
 
+                        case ' ':
+                            _fieldArray[y, x] = new Void();
+                        break;
+
                         case '@':
                             this._player = new Player(y, x);
                             _fieldArray[y, x] = this._player;
@@ -111,19 +112,14 @@ namespace Sokoban
             return _fieldArray;
         }
 
-        public int getHeight()
-        {
-            return _height;
-        }
-
-        public int getWidth()
-        {
-            return _width;
-        }
-
         public Player getPlayer()
         {
             return _player;
+        }
+
+        public Field getFieldModel()
+        {
+            return _FieldModel;
         }
 
 

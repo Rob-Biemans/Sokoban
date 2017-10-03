@@ -12,13 +12,12 @@ namespace Sokoban
         public Destination()
         {
             this.type = "Destination";
-            this.moveAble = false;
             this.icon = "x";
         }
 
-        public override void moveTo()
+        public override Field[,] moveTo(Player player, string direction, Field[,] field)
         {
-            return;
+            throw new Exception();
         }
     }
 }

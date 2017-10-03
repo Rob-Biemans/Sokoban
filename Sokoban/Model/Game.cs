@@ -16,8 +16,9 @@ namespace Sokoban
         private Level _levelModel { get; set; }
 
         // Constructor
-        public Game()
+        public Game(GameController gc)
         {
+            this._GameController = gc;
             _levelModel = new Level();
         }
 
@@ -31,7 +32,7 @@ namespace Sokoban
             this._finished = true;
         }
 
-        public void createField(int getal)
+        public void initField(int getal)
         {
             _levelModel.setField(getal);
         }
@@ -45,5 +46,11 @@ namespace Sokoban
         {
             _levelModel.setField(getal);
         }
+
+        public Field[,] getField()
+        {
+            return _levelModel.getField();
+        }
+
     }
 }

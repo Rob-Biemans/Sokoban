@@ -62,6 +62,7 @@
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\Field.cs" />
     <Compile Include="Model\Floor.cs" />
+    <Compile Include="Void.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

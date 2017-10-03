@@ -24,18 +24,22 @@ namespace Sokoban
             Console.WriteLine("╘═══════════════════════════════════════════════╛");
         }
 
-        public void printLevel(int height, int width, Field[,] _fieldArray)
+        public void printLevel(Player player, Field[,] _fieldArray)
         {
             Console.Clear();
             printBanner();
-            for (int y = 0; y < height; y++)
+            for (int y = 0; y < _fieldArray.GetLength(0); y++)
             {
-                for (int x = 0; x < width; x++)
+                for (int x = 0; x < _fieldArray.GetLength(1); x++)
                 {
                     Console.Write(_fieldArray[y, x].icon);
                 }
                 Console.WriteLine();
             }
+
+            //_fieldArray[player.Y, player.X].icon = "@";
+            Console.WriteLine("PREV Player  Y: " + player.getPrevY() + " X: " + player.getPrevX());
+            Console.WriteLine("Player  Y: "+ player.Y + " X: " + player.X);
         }
 
         public void printBanner()

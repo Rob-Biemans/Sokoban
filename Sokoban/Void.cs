@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class DestinationFilled : Field
+    public class Void : Field
     {
-        public DestinationFilled()
+        public Void()
         {
-            this.type = "DestinationFilledWithChest";
-            this.icon = "0";
+            this.type = "Void";
+            this.icon = " ";
         }
 
         public override Field[,] moveTo(Player player, string direction, Field[,] field)

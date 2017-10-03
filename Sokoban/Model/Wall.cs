@@ -11,13 +11,12 @@ namespace Sokoban
         public Wall()
         {
             this.type = "Wall";
-            this.moveAble = false;
             this.icon = "#";
         }
 
-        public override void moveTo()
+        public override Field[,] moveTo(Player player, string direction, Field[,] fieldArray)
         {
-            return;
+            return fieldArray;
         }
     }
 }
