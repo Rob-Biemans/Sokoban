@@ -3,7 +3,7 @@
   <Class Name="Sokoban.Game">
     <Position X="7.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAKEAAAAAgAAAAAAAAAAQAAAAAAECBAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gAKEAAAAAgAAAAAAAAAAQAAAAAAECBAAAAAAAQAAAAA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -19,14 +19,6 @@
   </Class>
   <Class Name="Sokoban.Wall">
     <Position X="2.5" Y="8.25" Width="1.5" />
-    <InheritanceLine Type="Sokoban.Field" ManuallyRouted="true" FixedToPoint="true">
-      <Path>
-        <Point X="3" Y="4.718" />
-        <Point X="3" Y="7.863" />
-        <Point X="3.375" Y="7.863" />
-        <Point X="3.375" Y="8.25" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Model\Wall.cs</FileName>
@@ -35,15 +27,15 @@
   <Class Name="Sokoban.Chest">
     <Position X="6" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Model\Chest.cs</FileName>
       <NewMemberFileName>Model\chest.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Level">
-    <Position X="5" Y="0.75" Width="1.5" />
+    <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAGAAAAAABKAAQAAAAACGAAgCBAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAGAAAAAABKAAQAAAAACGAAgCBAAAAAAAAAAAQAQAAA=</HashCode>
       <FileName>Model\Level.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -52,14 +44,6 @@
   </Class>
   <Class Name="Sokoban.Destination">
     <Position X="4.25" Y="8.25" Width="1.5" />
-    <InheritanceLine Type="Sokoban.Field" ManuallyRouted="true">
-      <Path>
-        <Point X="3" Y="4.718" />
-        <Point X="3" Y="7.845" />
-        <Point X="5" Y="7.845" />
-        <Point X="5" Y="8.25" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Model\Destination.cs</FileName>
@@ -68,7 +52,7 @@
   <Class Name="Sokoban.GameController">
     <Position X="10.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAQAADEAAAECAAAAAABAAACAAACA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAQAADEAAAkCAAAAAABAAACAAACA=</HashCode>
       <FileName>Controller\GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -81,20 +65,12 @@
   <Class Name="Sokoban.outputView">
     <Position X="14" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAY=</HashCode>
       <FileName>View\outputView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.DestinationFilled">
     <Position X="7.75" Y="8.25" Width="1.5" />
-    <InheritanceLine Type="Sokoban.Field" ManuallyRouted="true">
-      <Path>
-        <Point X="3" Y="4.718" />
-        <Point X="3" Y="7.863" />
-        <Point X="8.5" Y="7.863" />
-        <Point X="8.5" Y="8.25" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Model\DestinationFilled.cs</FileName>
@@ -125,7 +101,7 @@
   <Class Name="Sokoban.Field">
     <Position X="2.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEABAAAACQAAAAAAYCA=</HashCode>
+      <HashCode>ABAAAAAAAAAACAAAAAAAAAAAAEABAAAACQAAAAAAYCA=</HashCode>
       <FileName>Model\Field.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -13,7 +13,7 @@ namespace Sokoban
             this.icon = " ";
         }
 
-        public override Field[,] moveTo(Player player, string direction, Field[,] field)
+        public override Field[,] moveTo(Player player, string direction, Field[,] field, Field[,] fieldArrayTop)
         {
             throw new Exception();
         }

@@ -14,7 +14,7 @@ namespace Sokoban
             this.icon = "#";
         }
 
-        public override Field[,] moveTo(Player player, string direction, Field[,] fieldArray)
+        public override Field[,] moveTo(Player player, string direction, Field[,] fieldArray, Field[,] fieldArrayTop)
         {
             return fieldArray;
         }

@@ -16,21 +16,34 @@ namespace Sokoban
         {
             this.type = "Player";
             this.icon = "@";
+            this.walkAble = true;
 
             this.Y = y;
             this.X = x;
         }
 
-        public override Field[,] moveTo(Player player, string direction, Field[,] fieldArray)
+        public override Field[,] moveTo(Player player, string direction, Field[,] fieldArray, Field[,] fieldArrayTop)
         {
             //Console.WriteLine("Player from - Y: " + Y + " X: " + X);
             this.prevY = Y;
             this.prevX = X;
 
-            checkNextOfMe(player, direction, fieldArray).moveTo(player, direction, fieldArray);
+            var obj = checkNextOfMe(player, direction, fieldArrayTop);
+
+            switch (obj.icon)
+            {
+                case "x":
+                    Console.WriteLine("destination");
+                break;
+
+                default:
+                    Console.WriteLine(obj);
+                    obj.moveTo(player, direction, fieldArray, fieldArrayTop);
+                break;
+            }
 
             //Console.WriteLine("Player to - Y: " + Y + " X: " + X);
-            //Console.ReadKey();
+            Console.ReadKey();
 
             return fieldArray;
         }

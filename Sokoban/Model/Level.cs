@@ -65,6 +65,7 @@ namespace Sokoban
             this._width = getWidthofLevel(lines);
 
             this._fieldArray = new Field[_height, _width];
+            this._fieldArrayTop = new Field[_height, _width];
 
             int y = 0; // row
             int x = 0; // colomn
@@ -76,28 +77,34 @@ namespace Sokoban
                     switch (Char)
                     {
                         case '#':
+                            _fieldArrayTop[y, x] = new Wall();
                             _fieldArray[y,x] = new Wall();
                         break;
 
                         case '.':
+                            _fieldArrayTop[y, x] = new Floor();
                             _fieldArray[y, x] = new Floor();
                         break;
 
                         case 'o':
-                            _fieldArray[y, x] = new Chest();
+                            _fieldArrayTop[y, x] = new Chest();
+                            _fieldArray[y, x] = new Floor();
                         break;
 
                         case 'x':
+                            _fieldArrayTop[y, x] = new Floor();
                             _fieldArray[y, x] = new Destination();
                         break;
 
                         case ' ':
+                            _fieldArrayTop[y, x] = new Floor();
                             _fieldArray[y, x] = new Void();
                         break;
 
                         case '@':
                             this._player = new Player(y, x);
-                            _fieldArray[y, x] = this._player;
+                            _fieldArrayTop[y, x] = this._player;
+                            _fieldArray[y, x] = new Floor();
                         break;
                     }
                     x++;
@@ -110,6 +117,12 @@ namespace Sokoban
         public Field[,] getField()
         {
             return _fieldArray;
+        }
+
+        //debug
+        public Field[,] getFieldTop()
+        {
+            return _fieldArrayTop;
         }
 
         public Player getPlayer()

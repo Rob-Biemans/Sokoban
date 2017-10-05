@@ -43,50 +43,50 @@ namespace Sokoban
             {
                 _inputView.printQuestion();
                 var ch = Console.ReadKey(false).Key;
-                switch (ch)
-                {
-                    case ConsoleKey.UpArrow:
-                        direction = "Up";
-                        updateLevel(_player, _player.moveTo(this._player, direction, _gameModel.getLevelModel().getField()));
-                        break;
-                    case ConsoleKey.DownArrow:
-                        direction = "Down";
-                        updateLevel(_player, _player.moveTo(this._player, direction, _gameModel.getLevelModel().getField()));
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        direction = "Left";
-                        updateLevel(_player, _player.moveTo(this._player, direction, _gameModel.getLevelModel().getField()));
-                        break;
-                    case ConsoleKey.RightArrow:
-                        direction = "Right";
-                        updateLevel(_player, _player.moveTo(this._player, direction, _gameModel.getLevelModel().getField()));
-                        break;
-                    case ConsoleKey.R:
-                        _gameModel.resetField(_selectedLevel);
-                        _outputView.printLevel(_player, _gameModel.getLevelModel().getField());
-                        this._player.X = _gameModel.getLevelModel().getPlayer().X;
-                        this._player.Y = _gameModel.getLevelModel().getPlayer().Y;
-                        break;
-                    case ConsoleKey.S:
-                        return;
+
+                if (ch == ConsoleKey.UpArrow) {
+                    direction = "Up";
+                } else if (ch == ConsoleKey.DownArrow) {
+                    direction = "Down";
+                } else if (ch == ConsoleKey.LeftArrow) {
+                    direction = "Left";
+                } else if (ch == ConsoleKey.RightArrow) {
+                    direction = "Right";
+                } else if (ch == ConsoleKey.R) {
+                    _gameModel.resetField(_selectedLevel);
+                    _outputView.printLevel(_player, _gameModel.getLevelModel().getField(), _gameModel.getLevelModel().getFieldTop());
+                    this._player.X = _gameModel.getLevelModel().getPlayer().X;
+                    this._player.Y = _gameModel.getLevelModel().getPlayer().Y;
+                } else if (ch == ConsoleKey.S) {
+                    Environment.Exit(0);
                 }
-                
+
+                updateLevel(_player, _player.moveTo(this._player, direction, _gameModel.getLevelModel().getField(), _gameModel.getLevelModel().getFieldTop()), _gameModel.getLevelModel().getFieldTop());
+
             }
 
-            //# 1 locatie speler
-            //# 2 bekijken of het mogelijk is om te verplaatsen naar gewenste richting
-            //#   ~ bij floor = speler verplaatsen op die plek.
-            //#      ~ vorige positie speler wordt floor
-
-            // 3 verplaatsen van een chest
-            //   ~ check of kist kan bewegen (andere kant van kist moet floor zijn)
-            //      ~ vorige positie kist wordt speler
-            //      ~ vorige positie speler wordt floor
         }
 
-        public void updateLevel(Player player, Field[,] fieldArray)
+        public void updateLevel(Player player, Field[,] fieldArray, Field[,] fieldArrayTop)
         {
-            _outputView.printLevel(_player, fieldArray);
+            checkForDestinationsFilled(fieldArray, fieldArrayTop);
+
+            _outputView.printLevel(_player, fieldArray, fieldArrayTop);
+        }
+
+        public void checkForDestinationsFilled(Field[,] fieldArray, Field[,] fieldArrayTop)
+        {
+            for (int y = 0; y < fieldArray.GetLength(0); y++)
+            {
+                for (int x = 0; x < fieldArray.GetLength(1); x++)
+                {
+                    if (fieldArray[y, x].icon == "x" && fieldArrayTop[y, x].icon == "o")
+                    {
+                        fieldArray[y, x] = new DestinationFilled();
+                    }
+                }
+                Console.WriteLine();
+            }
         }
 
         // Vraagt aan gebruiker om een level te kiezen
@@ -105,7 +105,7 @@ namespace Sokoban
             try {
                 _selectedLevel = Int16.Parse(note);
                 _gameModel.initField(_selectedLevel);
-                _outputView.printLevel(_gameModel.getLevelModel().getPlayer(), _gameModel.getLevelModel().getField());
+                _outputView.printLevel(_gameModel.getLevelModel().getPlayer(), _gameModel.getLevelModel().getField(), _gameModel.getLevelModel().getFieldTop());
                 play();
             } catch (FormatException e) {
                 selectLevel();

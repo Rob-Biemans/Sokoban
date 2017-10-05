@@ -24,7 +24,7 @@ namespace Sokoban
             Console.WriteLine("╘═══════════════════════════════════════════════╛");
         }
 
-        public void printLevel(Player player, Field[,] _fieldArray)
+        public void printLevel(Player player, Field[,] _fieldArray, Field[,] _fieldArrayTop)
         {
             Console.Clear();
             printBanner();
@@ -36,10 +36,19 @@ namespace Sokoban
                 }
                 Console.WriteLine();
             }
-
             //_fieldArray[player.Y, player.X].icon = "@";
             Console.WriteLine("PREV Player  Y: " + player.getPrevY() + " X: " + player.getPrevX());
             Console.WriteLine("Player  Y: "+ player.Y + " X: " + player.X);
+
+            //debug
+            for (int y = 0; y < _fieldArrayTop.GetLength(0); y++)
+            {
+                for (int x = 0; x < _fieldArrayTop.GetLength(1); x++)
+                {
+                   Console.Write(_fieldArrayTop[y, x].icon);
+                }
+                Console.WriteLine();
+            }
         }
 
         public void printBanner()

@@ -12,29 +12,38 @@ namespace Sokoban
         {
             this.type = "Floor";
             this.icon = ".";
+            this.walkAble = true;
         }
 
-        public override Field[,] moveTo(Player player, string direction, Field[,] fieldArray)
+        public override Field[,] moveTo(Player player, string direction, Field[,] fieldArray, Field[,] fieldArrayTop)
         {
             switch (direction)
             {
                 case "Up":
-                    fieldArray[player.Y - 1, player.X] = player;
+                    fieldArrayTop[player.Y, player.X] = this;
+                    fieldArrayTop[player.Y - 1, player.X] = player;
+
                     fieldArray[player.Y, player.X] = this;
                     player.Y = player.Y - 1;
                     return fieldArray;
                 case "Down":
-                    fieldArray[player.Y + 1, player.X] = player;
+                    fieldArrayTop[player.Y, player.X] = this;
+                    fieldArrayTop[player.Y + 1, player.X] = player;
+
                     fieldArray[player.Y, player.X] = this;
                     player.Y = player.Y + 1;
                     return fieldArray;
                 case "Right":
-                    fieldArray[player.Y, player.X + 1] = player;
+                    fieldArrayTop[player.Y, player.X] = this;
+                    fieldArrayTop[player.Y, player.X + 1] = player;
+
                     fieldArray[player.Y, player.X] = this;
                     player.X = player.X + 1;
                     return fieldArray;
                 case "Left":
-                    fieldArray[player.Y, player.X - 1] = player;
+                    fieldArrayTop[player.Y, player.X] = this;
+                    fieldArrayTop[player.Y, player.X - 1] = player;
+
                     fieldArray[player.Y, player.X] = this;
                     player.X = player.X - 1;
                     return fieldArray;
