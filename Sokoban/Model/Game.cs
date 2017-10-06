@@ -52,7 +52,6 @@ namespace Sokoban
             return _levelModel.getField();
         }
 
-        //debug
         public Field[,] getFieldTop()
         {
             return _levelModel.getFieldTop();

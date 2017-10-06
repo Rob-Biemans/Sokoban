@@ -59,6 +59,8 @@ namespace Sokoban
                     this._player.Y = _gameModel.getLevelModel().getPlayer().Y;
                 } else if (ch == ConsoleKey.S) {
                     Environment.Exit(0);
+                } else {
+                    play();
                 }
 
                 updateLevel(_player, _player.moveTo(this._player, direction, _gameModel.getLevelModel().getField(), _gameModel.getLevelModel().getFieldTop()), _gameModel.getLevelModel().getFieldTop());
@@ -76,20 +78,43 @@ namespace Sokoban
 
         public void checkForDestinationsFilled(Field[,] fieldArray, Field[,] fieldArrayTop)
         {
+            int destinations = 0;
+            int destinationsFilled = 0;
+
             for (int y = 0; y < fieldArray.GetLength(0); y++)
             {
                 for (int x = 0; x < fieldArray.GetLength(1); x++)
                 {
+                    
                     if (fieldArray[y, x].icon == "x" && fieldArrayTop[y, x].icon == "o")
                     {
                         fieldArray[y, x] = new DestinationFilled();
                     }
+
+                    if (fieldArray[y, x].icon == "0" && fieldArrayTop[y, x].icon == "@")
+                    {
+                        fieldArray[y, x] = new Destination();
+                    }
+
+                    if (fieldArray[y, x].icon == "0")
+                        destinationsFilled++;
+                    
+                    if (fieldArray[y, x].icon == "x")
+                        destinations--;
+                    
                 }
                 Console.WriteLine();
             }
+
+            if (destinations == 0)
+            {
+                _gameModel.setFinished();
+                _outputView.printWin();
+                Console.ReadKey();
+            }
+
         }
 
-        // Vraagt aan gebruiker om een level te kiezen
         public void selectLevel()
         {
             Console.WriteLine("Kies een doolhof (1 - 4), s = stop");

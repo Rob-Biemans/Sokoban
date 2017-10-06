@@ -28,19 +28,12 @@ namespace Sokoban
             this.prevY = Y;
             this.prevX = X;
 
-            var obj = checkNextOfMe(player, direction, fieldArrayTop);
-
-            switch (obj.icon)
+            if (checkNextOfMe(player, direction, fieldArrayTop).icon == "#" || checkNextOfObjectTop(player, direction, fieldArrayTop).icon == "o" && checkNextOfMe(player, direction, fieldArrayTop).icon == "o" )
             {
-                case "x":
-                    Console.WriteLine("destination");
-                break;
-
-                default:
-                    Console.WriteLine(obj);
-                    obj.moveTo(player, direction, fieldArray, fieldArrayTop);
-                break;
+                return fieldArray;
             }
+
+            checkNextOfMe(player, direction, fieldArrayTop).moveTo(player, direction, fieldArray, fieldArrayTop);
 
             //Console.WriteLine("Player to - Y: " + Y + " X: " + X);
             Console.ReadKey();

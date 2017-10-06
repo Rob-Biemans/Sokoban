@@ -46,6 +46,11 @@ namespace Sokoban
             throw new Exception();
         }
 
+        public Field checkPreviousOfMe(Player player, string direction, Field[,] fieldArray)
+        {
+            return fieldArray[player.Y, player.X];
+        }
+
         public Field checkNextOfObject(Player player, string direction, Field[,] fieldArray)
         {
 
@@ -69,6 +74,33 @@ namespace Sokoban
             throw new Exception();
         }
 
+        public Field checkPreviousOfObject(Player player, Field[,] fieldArray)
+        {
+            return fieldArray[player.Y, player.X];
+        }
+
+        public Field checkNextOfObjectTop(Player player, string direction, Field[,] fieldArrayTop)
+        {
+
+            if (direction == "Up")
+            {
+                return fieldArrayTop[player.Y - 2, player.X];
+            }
+            else if (direction == "Down")
+            {
+                return fieldArrayTop[player.Y + 2, player.X];
+            }
+            else if (direction == "Right")
+            {
+                return fieldArrayTop[player.Y, player.X + 2];
+            }
+            else if (direction == "Left")
+            {
+                return fieldArrayTop[player.Y, player.X - 2];
+            }
+
+            throw new Exception();
+        }
 
     }
 }

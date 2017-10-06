@@ -119,7 +119,6 @@ namespace Sokoban
             return _fieldArray;
         }
 
-        //debug
         public Field[,] getFieldTop()
         {
             return _fieldArrayTop;

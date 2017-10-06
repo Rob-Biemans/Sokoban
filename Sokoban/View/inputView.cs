@@ -12,5 +12,6 @@ namespace Sokoban
             Console.WriteLine("═════════════════════════");
             Console.WriteLine("> Gebruik de pijltoetsen om te lopen ( s = stop / r = reset )");
         }
+
     }
 }

@@ -13,7 +13,6 @@ namespace Sokoban
         {
             this.type = "Destination";
             this.icon = "x";
-            this.walkAble = true;
         }
 
         public override Field[,] moveTo(Player player, string direction, Field[,] fieldArray, Field[,] fieldArrayTop)
