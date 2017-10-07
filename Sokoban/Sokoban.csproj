@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\GameController.cs" />
+    <Compile Include="Model\Pitfall.cs" />
     <Compile Include="View\inputView.cs" />
     <Compile Include="Model\DestinationFilled.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -87,6 +88,7 @@
     <Content Include="Levels\doolhof4.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Levels\doolhof5.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

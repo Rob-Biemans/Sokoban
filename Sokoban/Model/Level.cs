@@ -76,6 +76,11 @@ namespace Sokoban
                 {
                     switch (Char)
                     {
+                        case '~':
+                            _fieldArrayTop[y, x] = new Floor();
+                            _fieldArray[y, x] = new Pitfall(3);
+                            break;
+
                         case '#':
                             _fieldArrayTop[y, x] = new Wall();
                             _fieldArray[y,x] = new Wall();

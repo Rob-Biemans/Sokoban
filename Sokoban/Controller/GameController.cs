@@ -96,6 +96,11 @@ namespace Sokoban
                         fieldArray[y, x] = new Destination();
                     }
 
+                    if (fieldArray[y, x].icon == "~" && fieldArray[y, x].lives <= 0)
+                    {
+                        fieldArray[y, x].icon = " ";
+                    }
+
                     if (fieldArray[y, x].icon == "0")
                         destinationsFilled++;
                     
@@ -117,7 +122,7 @@ namespace Sokoban
 
         public void selectLevel()
         {
-            Console.WriteLine("Kies een doolhof (1 - 4), s = stop");
+            Console.WriteLine("Kies een doolhof (1 - 5), s = stop");
             
             var note = Console.ReadLine();
 

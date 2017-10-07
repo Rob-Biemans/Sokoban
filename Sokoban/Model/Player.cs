@@ -28,7 +28,8 @@ namespace Sokoban
             this.prevY = Y;
             this.prevX = X;
 
-            if (checkNextOfMe(player, direction, fieldArrayTop).icon == "#" || checkNextOfObjectTop(player, direction, fieldArrayTop).icon == "o" && checkNextOfMe(player, direction, fieldArrayTop).icon == "o" )
+            if (checkNextOfMe(player, direction, fieldArrayTop).icon == "#" || 
+                checkNextOfObjectTop(player, direction, fieldArrayTop).icon == "o" && checkNextOfMe(player, direction, fieldArrayTop).icon == "o" )
             {
                 return fieldArray;
             }

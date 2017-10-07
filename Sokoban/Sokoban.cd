@@ -87,8 +87,8 @@
     <Position X="5" Y="5" Width="1.5" />
     <InheritanceLine Type="Sokoban.Field" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
-        <Point X="3.75" Y="4.158" />
-        <Point X="4.125" Y="4.158" />
+        <Point X="3.75" Y="4.276" />
+        <Point X="4.125" Y="4.276" />
         <Point X="4.125" Y="6.228" />
         <Point X="5" Y="6.228" />
       </Path>
@@ -101,7 +101,7 @@
   <Class Name="Sokoban.Field">
     <Position X="2.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAgAACAAAAAACAAAAAEABAAAACQAAAAQAYCA=</HashCode>
+      <HashCode>ABAAAAAAAgAACAAAAAACAAAAAEIBAAAACQAAAAQAYCA=</HashCode>
       <FileName>Model\Field.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -110,6 +110,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Void.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Pitfall">
+    <Position X="11.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Model\Pitfall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

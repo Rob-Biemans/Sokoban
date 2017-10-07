@@ -20,6 +20,7 @@ namespace Sokoban
             Console.WriteLine("|  o : krat               |  naar de bestemming |");
             Console.WriteLine("|  0 : krat op bestemming |                     |");
             Console.WriteLine("|  x : bestemming         |                     |");
+            Console.WriteLine("|  ~ : valkuil            |                     |");
             Console.WriteLine("|  @ : truck/speler       |                     |");
             Console.WriteLine("╘═══════════════════════════════════════════════╛");
         }
@@ -44,14 +45,14 @@ namespace Sokoban
             }
 
             //debug purpose
-            //for (int y = 0; y < _fieldArrayTop.GetLength(0); y++)
-            //{
-            //    for (int x = 0; x < _fieldArrayTop.GetLength(1); x++)
-            //    {
-            //        Console.Write(_fieldArrayTop[y, x].icon);
-            //    }
-            //    Console.WriteLine();
-            //}
+            for (int y = 0; y < _fieldArrayTop.GetLength(0); y++)
+            {
+                for (int x = 0; x < _fieldArrayTop.GetLength(1); x++)
+                {
+                    Console.Write(_fieldArrayTop[y, x].icon);
+                }
+                Console.WriteLine();
+            }
         }
 
         public void printBanner()

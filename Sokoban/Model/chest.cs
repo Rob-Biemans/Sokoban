@@ -23,6 +23,13 @@ namespace Sokoban
                 return fieldArray;
             }
 
+            if (checkNextOfObject(player, direction, fieldArray).icon == " ")
+            {
+                Console.WriteLine("GAT KUT");
+                Console.ReadKey();
+                return fieldArray;
+            }
+
             switch (direction)
             {
                 case "Up":

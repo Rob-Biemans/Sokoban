@@ -14,6 +14,7 @@ namespace Sokoban
         public bool walkAble = false;
         public int X { get; set; }
         public int Y { get; set; }
+        public int lives { get; set; }
 
         // Constructor
         public Field()

@@ -21,6 +21,8 @@ namespace Sokoban
         {
             if (checkPreviousOfMe(player, direction, fieldArray).icon == "x") {
                 _obj = new Destination();
+            } else if (checkPreviousOfMe(player, direction, fieldArray).icon == "~" || checkPreviousOfMe(player, direction, fieldArray).icon == " ") {
+                _obj = new Pitfall(checkPreviousOfMe(player, direction, fieldArray).lives-= 1);
             } else {
                 _obj = this;
             }
