@@ -22,8 +22,12 @@ namespace Sokoban
 
         }
 
+        // Move the object to different tile
+        // If theres room to walk to and other conditions are met.
         public abstract Field[,] moveTo(Player player, string direction, Field[,] field, Field[,] fieldTop);
 
+        // Check what object is on the tile next of the player
+        // lower layer
         public Field checkNextOfMe(Player player, string direction, Field[,] fieldArray)
         {
 
@@ -47,11 +51,14 @@ namespace Sokoban
             throw new Exception();
         }
 
+        // Check previous tile (object) on the lower layer
         public Field checkPreviousOfMe(Player player, string direction, Field[,] fieldArray)
         {
             return fieldArray[player.Y, player.X];
         }
 
+        // Check whats next of the object
+        // lower layer
         public Field checkNextOfObject(Player player, string direction, Field[,] fieldArray)
         {
 
@@ -75,11 +82,14 @@ namespace Sokoban
             throw new Exception();
         }
 
+        // Check what the tile previous had
         public Field checkPreviousOfObject(Player player, Field[,] fieldArray)
         {
             return fieldArray[player.Y, player.X];
         }
 
+        // Check whats next of the object
+        // top layer
         public Field checkNextOfObjectTop(Player player, string direction, Field[,] fieldArrayTop)
         {
 

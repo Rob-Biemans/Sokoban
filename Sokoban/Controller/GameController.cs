@@ -27,6 +27,7 @@ namespace Sokoban
             initGame();
         }
 
+        // Print game info message and allows the player to select level
         public void initGame()
         {
             _outputView.printWelcome();
@@ -69,6 +70,7 @@ namespace Sokoban
 
         }
 
+        // Update the level and reprint the level
         public void updateLevel(Player player, Field[,] fieldArray, Field[,] fieldArrayTop)
         {
             checkForDestinationsFilled(fieldArray, fieldArrayTop);
@@ -76,6 +78,8 @@ namespace Sokoban
             _outputView.printLevel(_player, fieldArray, fieldArrayTop);
         }
 
+        // Check if the destinations has a chest ontop
+        // Also check if all destinations are filled
         public void checkForDestinationsFilled(Field[,] fieldArray, Field[,] fieldArrayTop)
         {
             int destinations = 0;

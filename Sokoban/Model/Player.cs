@@ -37,7 +37,6 @@ namespace Sokoban
             checkNextOfMe(player, direction, fieldArrayTop).moveTo(player, direction, fieldArray, fieldArrayTop);
 
             //Console.WriteLine("Player to - Y: " + Y + " X: " + X);
-            Console.ReadKey();
 
             return fieldArray;
         }

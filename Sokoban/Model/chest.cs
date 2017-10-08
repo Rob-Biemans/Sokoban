@@ -7,6 +7,7 @@ namespace Sokoban
 {
     public class Chest : Field
     {
+        private Field _obj;
 
         // Constructor
         public Chest()
@@ -25,9 +26,9 @@ namespace Sokoban
 
             if (checkNextOfObject(player, direction, fieldArray).icon == " ")
             {
-                Console.WriteLine("GAT KUT");
-                Console.ReadKey();
-                return fieldArray;
+                _obj = new Floor();
+            } else {
+                _obj = this;
             }
 
             switch (direction)
@@ -35,25 +36,25 @@ namespace Sokoban
                 case "Up":
                     fieldArrayTop[player.Y, player.X] = new Floor();
                     fieldArrayTop[player.Y - 1, player.X] = player;
-                    fieldArrayTop[player.Y - 2, player.X] = this;
+                    fieldArrayTop[player.Y - 2, player.X] = _obj;
                     player.Y = player.Y - 1;
                     return fieldArray;
                 case "Down":
                     fieldArrayTop[player.Y, player.X] = new Floor();
                     fieldArrayTop[player.Y + 1, player.X] = player;
-                    fieldArrayTop[player.Y + 2, player.X] = this;
+                    fieldArrayTop[player.Y + 2, player.X] = _obj;
                     player.Y = player.Y + 1;
                     return fieldArray;
                 case "Right":
                     fieldArrayTop[player.Y, player.X] = new Floor();
                     fieldArrayTop[player.Y, player.X + 1] = player;
-                    fieldArrayTop[player.Y, player.X + 2] = this;
+                    fieldArrayTop[player.Y, player.X + 2] = _obj;
                     player.X = player.X + 1;
                     return fieldArray;
                 case "Left":
                     fieldArrayTop[player.Y, player.X] = new Floor();
                     fieldArrayTop[player.Y, player.X - 1] = player;
-                    fieldArrayTop[player.Y, player.X - 2] = this;
+                    fieldArrayTop[player.Y, player.X - 2] = _obj;
                     player.X = player.X - 1;
                     return fieldArray;
             }
